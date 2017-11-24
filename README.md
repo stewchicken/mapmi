@@ -52,11 +52,11 @@ or run `ionic serve` to view it on browser
 
 - report accident, new accident will be listed on map automatically after reporting
 
-![report accident with  handynumber,details,  photo, gps location automatically](screenshots/mapmi3.png screenshots/mapmi4.png)
+![report accident with  handynumber,details,  photo, gps location automatically](screenshots/mapmi3.png)(screenshots/mapmi4.png)
 
 - view accident details
 
-![click marker on map to view accident in details](screenshots/mapmi5.png screenshots/mapmi6.png)
+![click marker on map to view accident in details](screenshots/mapmi5.png)(screenshots/mapmi6.png)
 
 
 
