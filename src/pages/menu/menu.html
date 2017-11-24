@@ -1,0 +1,21 @@
+<!--  Generated template for the MenuPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Map Mi Platform</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-content>
+    <ion-item-group>
+      <ion-item (click)="navtoProduct()"> Secondhand Map</ion-item>
+      <ion-item (click)="navtoHouse()"> House/Apartment Map</ion-item>
+      <ion-item (click)="navtoMap()"> Accident Map</ion-item>
+    </ion-item-group>
+  </ion-content>

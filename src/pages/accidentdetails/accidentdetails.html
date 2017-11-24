@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AccidentdetailsPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>accident details </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <h2>Accident Photoss:</h2>
+      <img ng-if="accident?.imageUrl" [src]="accident.imageUrl " height="200" width="auto" />
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-pin" item-start large></ion-icon>
+      <h2>GPS location(lat/lng)</h2>
+      <p>{{accident.lat}} / {{accident.lng}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-reorder" item-left large></ion-icon>
+      <h2>Status</h2>
+      <p> {{accident.status}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-warning" item-left large></ion-icon>
+      <h2>Severity</h2>
+      <p>{{accident.category}}</p>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-icon name="md-timer" item-left large></ion-icon>
+      <h2>Time:</h2>
+      <p>{{accident.date}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-call" item-left large></ion-icon>
+      <h2>Handy</h2>
+      <p>{{accident.handynumber}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="md-clipboard" item-left large></ion-icon>
+      <h2>Details</h2>
+      <p>{{accident.details}}</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AddproductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>addproduct</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label floating> product name
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>category</ion-label>
+    <ion-select type="text" [(ngModel)]="product.category">
+      <ion-option value="see food">see food</ion-option>
+      <ion-option value="vegitable">vegitable</ion-option>
+      <ion-option value="fruit">fruit</ion-option>
+      <ion-option value="dry food">dry food</ion-option>
+      <ion-option value="meat">meat</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> product price
+    </ion-label>
+    <ion-input type="number" step="0.1" [(ngModel)]="product.price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating> product details
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="product.details"></ion-input>
+  </ion-item>
+  <ion-item>
+    <img [src]="captureDataUrl" *ngIf="captureDataUrl" height="100px" width="auto" />
+  </ion-item>
+  <button *ngIf="!captureDataUrl" ion-button block (click)="takePicAndUpload()">take photo upload</button>
+  <button ion-button block type="submit" [disabled]="!captureDataUrl||!product.details||!product.name||!product.price||!product.category" (click)="onAddProduct(product)">add product</button>
+</ion-content>

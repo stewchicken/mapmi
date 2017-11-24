@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ProductsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="navtoAddHousePage()" end>
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>House list</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="row" responsive-sm wrap *ngFor="let house of houses ">
+      <ion-col>
+        <img ng-if="!house.imageUrl" [src]="house.imageUrl " height="100px" width="auto" />
+      </ion-col>
+      <ion-col>
+        location: {{house.location}}   {{house.rooms}} rooms:
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
