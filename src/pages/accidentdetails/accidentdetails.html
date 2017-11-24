@@ -16,7 +16,7 @@
 <ion-content padding>
   <ion-card>
     <ion-item>
-      <h2>Accident Photoss:</h2>
+      <h2>Accident Photo:</h2>
       <img ng-if="accident?.imageUrl" [src]="accident.imageUrl " height="200" width="auto" />
     </ion-item>
 
@@ -29,7 +29,7 @@
     <ion-item>
       <ion-icon name="md-reorder" item-left large></ion-icon>
       <h2>Status</h2>
-      <p> {{accident.status}}</p>
+      <p>{{accident.status}}</p>
     </ion-item>
 
     <ion-item>
@@ -37,7 +37,6 @@
       <h2>Severity</h2>
       <p>{{accident.category}}</p>
     </ion-item>
-
 
     <ion-item>
       <ion-icon name="md-timer" item-left large></ion-icon>
