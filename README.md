@@ -44,19 +44,19 @@ or run `ionic serve` to view it on browser
 
 - start app 
 
-![start](screenshoots/mapmi1.png)
+![start](screenshots/mapmi1.png)
 
 - list all reported accidents (green means nobody injured, yellow means injured, red means somebody dead)
 
-![list accidents](screenshoots/mapmi2.png)
+![list accidents](screenshots/mapmi2.png)
 
 - report accident, new accident will be listed on map automatically after reporting
 
-![report accident with  handynumber,details,  photo, gps location automatically](screenshoots/login-mapmi3.png screenshoots/login-mapmi4.png)
+![report accident with  handynumber,details,  photo, gps location automatically](screenshots/mapmi3.png screenshoots/mapmi4.png)
 
 - view accident details
 
-![click marker on map to view accident in details](screenshoots/login-mapmi5.png screenshoots/login-mapmi6.png)
+![click marker on map to view accident in details](screenshoots/mapmi5.png screenshots/mapmi6.png)
 
 
 
