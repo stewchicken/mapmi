@@ -9,6 +9,9 @@
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
       </button>
+      <button ion-button icon-only (click)="getCurrentLocation()">
+          <ion-icon name="locate"></ion-icon>
+        </button>
       <button ion-button icon-only (click)="navtoAddAccidentPage()" end>
         <ion-icon name="add"></ion-icon>
       </button>
@@ -19,17 +22,16 @@
 
 <ion-content padding>
   <!--div #map id="map"></div-->
-    <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-       <div *ngFor="let accident of accidents">
-              <agm-marker (markerClick)="clickMarker(accident)"
-              [label]="accident.details"  
-              [latitude]="accident.lat" 
-              [longitude]="accident.lng"
-              [iconUrl] ="getPinUrl(accident)">
-                <!--agm-info-window>
-                  <strong>{{accident.details|date}}</strong>
-                </agm-info-window-->
-              </agm-marker>
-            </div>
-    </agm-map>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <div *ngFor="let accident of accidents">
+      <agm-marker (markerClick)="clickMarker(accident)" [label]="accident.details" [latitude]="accident.lat" [longitude]="accident.lng"
+        [iconUrl]="getPinUrl(accident)">
+      </agm-marker>
+    </div>
+  </agm-map>
+  <ion-item>
+      <ion-icon name="pin"></ion-icon>
+      GPS(lat/lng)
+      <ion-badge item-end>{{lat}} / {{lng}}</ion-badge>
+    </ion-item>
 </ion-content>

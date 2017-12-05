@@ -44,7 +44,7 @@ export class ShowmapPage {
     private afAuth: AngularFireAuth,
     private database: AngularFireDatabase, private imageSrv: ImageProvider) {
     console.log('constructor ShowMapPage');
-    this.getCurrentLocation();
+    //this.getCurrentLocation();
   }
 
   ionViewDidLoad() {
@@ -56,50 +56,25 @@ export class ShowmapPage {
       subscribe(
       (data: any) => {
         this.accidents = data as Accident[];
-        /*
-        for (let i = 0; i < this.accidents.length; i++) {
-          console.log("this.accidents[i]: " + this.accidents[i]);
-          this.accidents[i].imagename;
-          this.accidents[i].details;
-          this.accidents[i].date;
-          this.accidents[i].handynumber;
-          this.accidents[i].lat;
-          this.accidents[i].lng;
-          console.log("imagename: " + this.accidents[i].imagename);
-          
-                    this.imageSrv.getImage("accidents", this.accidents[i].imagename).then(
-                      imageUrl => {
-                        this.accidents[i].imageUrl = imageUrl;
-                        console.log("imageUrl:" + this.accidents[i].imageUrl);
-                      }
-                    ).catch(
-                      error => {
-                        console.log(error);
-                      }
-                    );
-          
-      }*/
       });
-
+    this.getCurrentLocation();
   }
-  getPinUrl(accident : Accident){
-    console.log("accident.category: xxx "+accident.category + " : " +accident.details);
-    if(accident.category=="Nobody Injured"){
+  getPinUrl(accident: Accident) {
+    console.log("accident.category: xxx " + accident.category + " : " + accident.details);
+    if (accident.category == "Nobody Injured") {
       return "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
     }
-    if(accident.category=="Injured"){
+    if (accident.category == "Injured") {
       return "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
     }
     return "http://maps.google.com/mapfiles/ms/icons/red-dot.png";;
   }
-  
+
   getCurrentLocation() {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lng = resp.coords.longitude;
-      console.log("lat:  " + this.lat);
-      console.log("lng:  " + this.lng);
-      console.log("currentDate:  " + new Date());
+      console.log("lat/lng " + this.lat + ' / ' + this.lng);
     }).catch((error) => {
       console.log('Error getting location', error);
     });
@@ -108,7 +83,7 @@ export class ShowmapPage {
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter ShowmapPage');
-   // this.agmMap.triggerResize();
+    // this.agmMap.triggerResize();
   }
 
   ionViewWillLeave() {
