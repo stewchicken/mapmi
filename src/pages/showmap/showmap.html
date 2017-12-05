@@ -10,8 +10,8 @@
         <ion-icon name="log-out"></ion-icon>
       </button>
       <button ion-button icon-only (click)="getCurrentLocation()">
-          <ion-icon name="locate"></ion-icon>
-        </button>
+        <ion-icon name="locate"></ion-icon>
+      </button>
       <button ion-button icon-only (click)="navtoAddAccidentPage()" end>
         <ion-icon name="add"></ion-icon>
       </button>
@@ -30,8 +30,13 @@
     </div>
   </agm-map>
   <ion-item>
-      <ion-icon name="pin"></ion-icon>
-      GPS(lat/lng)
-      <ion-badge item-end>{{lat}} / {{lng}}</ion-badge>
-    </ion-item>
+    <ion-icon name="pin"></ion-icon>
+    GPS(lat/lng)
+    <ion-badge item-end>{{lat}} / {{lng}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="timer"></ion-icon>
+    Time
+    <ion-badge item-end>{{time| date:'mediumTime'}}</ion-badge>
+  </ion-item>
 </ion-content>

@@ -38,17 +38,19 @@ export class ShowmapPage {
   lat: number;
   lng: number;
   zoom: number = 10;
+  time: Date;
+
 
 
   constructor(private geolocation: Geolocation, public navCtrl: NavController, public navParams: NavParams,
     private afAuth: AngularFireAuth,
     private database: AngularFireDatabase, private imageSrv: ImageProvider) {
     console.log('constructor ShowMapPage');
-    //this.getCurrentLocation();
+
   }
 
   ionViewDidLoad() {
-    //console.log('this.mapRef' + this.mapRef);
+    this.getCurrentLocation();
     console.log('ionViewDidLoad ShowMapPage');
     this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
     this.accidentsItemRef$ = this.database.list('accidentitems');
@@ -57,7 +59,6 @@ export class ShowmapPage {
       (data: any) => {
         this.accidents = data as Accident[];
       });
-    this.getCurrentLocation();
   }
   getPinUrl(accident: Accident) {
     console.log("accident.category: xxx " + accident.category + " : " + accident.details);
@@ -71,6 +72,7 @@ export class ShowmapPage {
   }
 
   getCurrentLocation() {
+    this.time = new Date();
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lng = resp.coords.longitude;
@@ -98,10 +100,7 @@ export class ShowmapPage {
   }
 
   clickMarker(accident: Accident) {
-    console.log("marker is clicked key ### " + accident.$key);
-    console.log("marker is clicked details ### " + accident.details);
-    console.log("marker is clicked date ### " + accident.date);
-
+  
     this.navCtrl.push(AccidentdetailsPage, {
       accidentkey: accident.$key
     });
@@ -120,7 +119,6 @@ export class ShowmapPage {
   onAuthCallback(user) {
     if (!user) {
       console.log("user is not logged in");
-      //this.logOut();
       this.navCtrl.popToRoot()
     } else {
       console.log("user is logged in");
