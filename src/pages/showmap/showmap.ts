@@ -76,6 +76,15 @@ export class ShowmapPage {
     });
   }
 
+  isShown(accident: Accident): boolean {
+    if (accident.status == 'CLOSE') {
+      return false;
+    }
+    else { 
+      return true;
+    }
+  }
+
   // example on AccidentDetail page, if user click backbutton, it will return to ShowMapPage 
   // in this case ionViewWillEnter will be called but ionViewDidLoad will not be called
   // will from Rootpage come to ShowMapPage, ionViewDidLoad and ionViewWillEnter both will be called
@@ -103,7 +112,7 @@ export class ShowmapPage {
   }
 
   clickMarker(accident: Accident) {
-  
+
     this.navCtrl.push(AccidentdetailsPage, {
       accidentkey: accident.$key
     });

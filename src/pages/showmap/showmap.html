@@ -24,7 +24,7 @@
   <!--div #map id="map"></div-->
   <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <div *ngFor="let accident of accidents">
-      <agm-marker (markerClick)="clickMarker(accident)" [label]="accident.details" [latitude]="accident.lat" [longitude]="accident.lng"
+      <agm-marker *ngIf="isShown(accident)" (markerClick)="clickMarker(accident)" [label]="accident.details" [latitude]="accident.lat" [longitude]="accident.lng"
         [iconUrl]="getPinUrl(accident)">
       </agm-marker>
     </div>
