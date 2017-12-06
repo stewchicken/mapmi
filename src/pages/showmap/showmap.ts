@@ -76,8 +76,9 @@ export class ShowmapPage {
     });
   }
 
-  // it will be called when clicking backbuton on other page
-  // ionViewDidLoad will not be called when clicking backbutton on other page
+  // example on AccidentDetail page, if user click backbutton, it will return to ShowMapPage 
+  // in this case ionViewWillEnter will be called but ionViewDidLoad will not be called
+  // will from Rootpage come to ShowMapPage, ionViewDidLoad and ionViewWillEnter both will be called
   ionViewWillEnter() {
     console.log('ionViewWillEnter ShowmapPage');
     this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
