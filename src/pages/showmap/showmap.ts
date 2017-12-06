@@ -52,13 +52,6 @@ export class ShowmapPage {
   ionViewDidLoad() {
     this.getCurrentLocation();
     console.log('ionViewDidLoad ShowMapPage');
-    this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
-    this.accidentsItemRef$ = this.database.list('accidentitems');
-    this.subscription = this.accidentsItemRef$.
-      subscribe(
-      (data: any) => {
-        this.accidents = data as Accident[];
-      });
   }
   getPinUrl(accident: Accident) {
     console.log("accident.category: xxx " + accident.category + " : " + accident.details);
@@ -73,6 +66,7 @@ export class ShowmapPage {
 
   getCurrentLocation() {
     this.time = new Date();
+    //let posOptions = {timeout: 10000, enableHighAccuracy: true};
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lng = resp.coords.longitude;
@@ -82,9 +76,17 @@ export class ShowmapPage {
     });
   }
 
-
+  // it will be called when clicking backbuton on other page
+  // ionViewDidLoad will not be called when clicking backbutton on other page
   ionViewWillEnter() {
     console.log('ionViewWillEnter ShowmapPage');
+    this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
+    this.accidentsItemRef$ = this.database.list('accidentitems');
+    this.subscription = this.accidentsItemRef$.
+      subscribe(
+      (data: any) => {
+        this.accidents = data as Accident[];
+      });
     // this.agmMap.triggerResize();
   }
 

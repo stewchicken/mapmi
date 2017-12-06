@@ -1,0 +1,2 @@
+C:\Users\<username>\AppData\Local\Android\Sdk\platform-tools  adb devices
+adb device
