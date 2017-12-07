@@ -23,6 +23,7 @@ import { ShoppingPage } from "../pages/shopping/shopping";
 import { AddproductPage } from "../pages/addproduct/addproduct";
 import { ImageProvider } from '../providers/image/image';
 import { Camera } from '@ionic-native/camera';
+import { Sim } from '@ionic-native/sim';
 import { HousePage } from "../pages/house/house";
 import { AddhousePage } from "../pages/addhouse/addhouse";
 import { ShowmapPage } from "../pages/showmap/showmap";
@@ -84,6 +85,7 @@ import { AccidentdetailsPage } from '../pages/accidentdetails/accidentdetails';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ImageProvider,
     Camera,
+    Sim, 
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]

@@ -9,12 +9,9 @@ import { ImageProvider } from "../../providers/image/image";
 import { AngularFireAuth } from "angularfire2/auth";
 import { Geolocation } from '@ionic-native/geolocation';
 import { ShowmapPage } from '../showmap/showmap';
-
+import { Sim } from '@ionic-native/sim';
 /**
- * Generated class for the AddaccidentPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
+ * Yan Wang
  */
 
 @Component({
@@ -34,7 +31,7 @@ export class AddaccidentPage {
     mediaType: this.camera.MediaType.PICTURE
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(private sim: Sim, public navCtrl: NavController, public navParams: NavParams,
     private camera: Camera, private imageSrv: ImageProvider, private database: AngularFireDatabase,
     private afAuth: AngularFireAuth, private geolocation: Geolocation) {
   }
@@ -76,6 +73,22 @@ export class AddaccidentPage {
       console.log('Error getting location', error);
     });
 
+  }
+  //at Android platform does not work well, could not get handy number from SIMCard
+  getHandyNumberFromSim() {
+    this.sim.getSimInfo().then(
+      (info) => {
+        this.sim.getSimInfo().then(
+          (info) => {
+            this.accident.handynumber=info.phoneNumber;
+            console.log('Sim info: ', info);
+          },
+          (err) => console.log('Unable to get sim info: ', err)
+        );
+        console.log('Sim info: ', info)
+      },
+      (err) => console.log('Unable to get sim info: ', err)
+    );
   }
 
 

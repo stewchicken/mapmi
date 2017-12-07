@@ -17,13 +17,15 @@
   <ion-card>
     <ion-item>
       <ion-label floating>Category</ion-label>
-        <ion-select required type="text" [(ngModel)]="accident.category">
-          <ion-option value="Nobody Injured">Nobody Injuried</ion-option>
-          <ion-option value="Injured">Somebody Injuried</ion-option>
-          <ion-option value="Someone Dead">Somebody Dead</ion-option>
-        </ion-select>
+      <ion-select required type="text" [(ngModel)]="accident.category">
+        <ion-option value="Nobody Injured">Nobody Injuried</ion-option>
+        <ion-option value="Injured">Somebody Injuried</ion-option>
+        <ion-option value="Someone Dead">Somebody Dead</ion-option>
+      </ion-select>
     </ion-item>
-    
+    <!--ion-item>
+      <button ion-button block (click)="getHandyNumberFromSim()">Get HandyNumber</button>
+    </ion-item-->
     <ion-item>
       <ion-label floating>Handynumber
       </ion-label>
