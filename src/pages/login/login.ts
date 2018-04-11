@@ -13,9 +13,8 @@ import { MenuPage } from "../menu/menu";
 })
 export class LoginPage {
   user = {} as User;
-  //loggedin = false;
   constructor(private afAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
-    this.onAuthCallback = this.onAuthCallback.bind(this);
+    //this.onAuthCallback = this.onAuthCallback.bind(this);
   }
 
   ionViewDidLoad() {
@@ -31,15 +30,14 @@ export class LoginPage {
       //this.loggedin = true;
       this.user = {} as User;
       this.navCtrl.push(MenuPage);
-      console.log("user is logged in");
-      return;
+      console.log("onAuthCallback -> user is logged in ");
     }
   }
 
   ionViewWillEnter() {
     // When the callback is triggered, it will have the 
     // proper value for 'this'.
-    this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
+    //this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
   }
 
 
@@ -52,6 +50,7 @@ export class LoginPage {
         console.log(this.afAuth.auth.currentUser);
         this.user = {} as User;
         this.navCtrl.push(MenuPage);
+        console.log("login -> user is logged in ");
 
       }).catch(error => {
         user.email = "email  maybe wrong!"
