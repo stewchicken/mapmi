@@ -5,7 +5,8 @@
 
 `mapmi` is a map platform to report and view accident 
 
-
+# generate icon and splash
+ - https://blog.ionicframework.com/automating-icons-and-splash-screens/
 
 # feature
 
