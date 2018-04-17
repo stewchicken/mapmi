@@ -36,7 +36,7 @@
       <ion-input type="text" required [(ngModel)]="accident.details"></ion-input>
     </ion-item>
     <ion-item>
-      <img [src]="captureDataUrl" *ngIf="captureDataUrl" height="200" width="auto" />
+      <img [src]="captureDataUrl" *ngIf="captureDataUrl" width="80%" height="auto" />
     </ion-item>
   </ion-card>
   <button *ngIf="!captureDataUrl" ion-button block (click)="takePicAndUpload()">take photo upload</button>
