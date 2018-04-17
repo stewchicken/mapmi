@@ -5,7 +5,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>report accident</ion-title>
+    <ion-title>Problem melden</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
@@ -16,11 +16,11 @@
 <ion-content padding>
   <ion-card>
     <ion-item>
-      <ion-label floating>Category</ion-label>
+      <ion-label floating>kategorie</ion-label>
       <ion-select required type="text" [(ngModel)]="accident.category">
-        <ion-option value="Nobody Injured">Nobody Injuried</ion-option>
-        <ion-option value="Injured">Somebody Injuried</ion-option>
-        <ion-option value="Someone Dead">Somebody Dead</ion-option>
+        <ion-option value="Defekt Laterne">Defekt Laterne</ion-option>
+        <ion-option value="Schlagloch">Schlagloch</ion-option>
+        <ion-option value="Haustier Vermisst">Haustier Vermisst</ion-option>
       </ion-select>
     </ion-item>
     <!--ion-item>

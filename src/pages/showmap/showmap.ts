@@ -55,10 +55,10 @@ export class ShowmapPage {
   }
   getPinUrl(accident: Accident) {
     console.log("accident.category: xxx " + accident.category + " : " + accident.details);
-    if (accident.category == "Nobody Injured") {
+    if (accident.category == "Defekt Laterne") {
       return "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
     }
-    if (accident.category == "Injured") {
+    if (accident.category == "Schlagloch") {
       return "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
     }
     return "http://maps.google.com/mapfiles/ms/icons/red-dot.png";;
