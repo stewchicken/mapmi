@@ -40,6 +40,10 @@
 
 or run `ionic serve` to view it on browser
 
+- debug with plugin at VSCode
+`
+https://marketplace.visualstudio.com/items?itemName=vsmobile.cordova-tools
+`
 
 # effects
 
