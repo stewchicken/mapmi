@@ -24,8 +24,9 @@ export class AddaccidentPage {
   captureDataUrl: string;
   accidentsItemRef$: FirebaseListObservable<Accident[]>;
   subscription: Subscription;
+  // quality 20 is enough 3MB size photo will be reduced to about 100KB
   cameraOptions: CameraOptions = {
-    quality: 50,
+    quality: 20,
     destinationType: this.camera.DestinationType.DATA_URL,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
@@ -59,8 +60,8 @@ export class AddaccidentPage {
       let location = { lat: resp.coords.latitude, lng: resp.coords.longitude };
       accident.lat = resp.coords.latitude;
       accident.lng = resp.coords.longitude;
-      console.log("imagename: " + this.accident.imagename);
-      console.log("imageUrl: " + this.accident.imageUrl);
+      console.debug("imagename: " + this.accident.imagename);
+      console.debug("imageUrl: " + this.accident.imageUrl);
       let tmpDate = new Date();
       accident.date = tmpDate.toLocaleDateString() + " " + tmpDate.toLocaleTimeString();
       accident.status = 'NEW';
@@ -97,6 +98,7 @@ export class AddaccidentPage {
     this.camera.getPicture(this.cameraOptions)
       .then(data => {
         let base64Image = 'data:image/jpeg;base64,' + data;
+        console.debug('image size = '+ (base64Image.length/1024)+ 'KB');
         this.captureDataUrl = base64Image;
         return this.imageSrv.uploadImage(base64Image, 'accidents', this.accident.imagename);
       })
