@@ -19,8 +19,9 @@
       <ion-label floating>kategorie</ion-label>
       <ion-select required type="text" [(ngModel)]="accident.category">
         <ion-option value="Defekt Laterne">Defekt Laterne</ion-option>
-        <ion-option value="Schlagloch">Schlagloch</ion-option>
         <ion-option value="Haustier Vermisst">Haustier Vermisst</ion-option>
+        <ion-option value="Schlagloch">Schlagloch</ion-option>
+        <ion-option value="Vandalismus">Vandalismus</ion-option>
       </ion-select>
     </ion-item>
     <!--ion-item>
@@ -36,10 +37,10 @@
       <ion-input type="text" required [(ngModel)]="accident.details"></ion-input>
     </ion-item>
     <ion-item>
-      <img [src]="captureDataUrl" *ngIf="captureDataUrl" width="80%" height="auto" />
+      <img [src]="captureDataUrl" *ngIf="captureDataUrl" width="40%" height="auto" />
     </ion-item>
   </ion-card>
   <button *ngIf="!captureDataUrl" ion-button block (click)="takePicAndUpload()">take photo upload</button>
   <button ion-button block type="submit" [disabled]="!captureDataUrl||!accident.handynumber
-  ||!accident.category||!accident.details" (click)="onAddAccident(accident)">report accident</button>
+  ||!accident.category||!accident.details" (click)="onAddAccident(accident)">Problem melden</button>
 </ion-content>

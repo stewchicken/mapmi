@@ -55,10 +55,11 @@ export class ShowmapPage {
   }
   getPinUrl(accident: Accident) {
     console.log("accident.category: xxx " + accident.category + " : " + accident.details);
-    if (accident.category == "Defekt Laterne") {
+
+    if (accident.category == "Haustier Vermisst") {
       return "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
     }
-    if (accident.category == "Schlagloch") {
+    if (accident.category == "Schlagloch" ||accident.category == "Defekt Laterne"  ) {
       return "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png";
     }
     return "http://maps.google.com/mapfiles/ms/icons/red-dot.png";;
@@ -84,7 +85,6 @@ export class ShowmapPage {
       return true;
     }
   }
-
   // example on AccidentDetail page, if user click backbutton, it will return to ShowMapPage 
   // in this case ionViewWillEnter will be called but ionViewDidLoad will not be called
   // will from Rootpage come to ShowMapPage, ionViewDidLoad and ionViewWillEnter both will be called
@@ -137,6 +137,4 @@ export class ShowmapPage {
       return;
     }
   }
-
-
 }
