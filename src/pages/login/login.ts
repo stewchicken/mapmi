@@ -35,6 +35,12 @@ export class LoginPage {
   }
 
   ionViewWillEnter() {
+    let user = JSON.parse(localStorage.getItem('currentUser')) as User;
+    if(user){
+      this.login(user);
+      console.log(" user.email " + user.email);
+      console.log(" user.password " + user.password);
+    }
     // When the callback is triggered, it will have the 
     // proper value for 'this'.
     //this.afAuth.auth.onAuthStateChanged(this.onAuthCallback);
@@ -53,7 +59,7 @@ export class LoginPage {
         // this.user = {} as User;
         this.navCtrl.push(MenuPage);
         console.log("login -> user is logged in ");
-
+        localStorage.setItem('currentUser', JSON.stringify(user));
       }).catch(error => {
         user.email = "email  maybe wrong!"
         user.password = "password maybe not correct!"

@@ -26,6 +26,7 @@ export class MenuPage {
     let menuPage=this;
     this.afAuth.auth.signOut().then(function () {
       menuPage.navCtrl.popToRoot();
+      localStorage.removeItem('currentUser');
     }, function (error) {
       // An error happened.
       console.log(error);
