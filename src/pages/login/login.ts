@@ -39,7 +39,7 @@ export class LoginPage {
     if(user){
       this.login(user);
       console.log(" user.email " + user.email);
-      console.log(" user.password " + user.password);
+      //console.log(" user.password " + user.password);
     }
     // When the callback is triggered, it will have the 
     // proper value for 'this'.
