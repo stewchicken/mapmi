@@ -13,10 +13,17 @@ ionic start myApp tabs
 ```
 
 Then, to run it, cd into `myApp` and run on real devices as app
-
+- for ios
 ```
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+ ionic cordova platform add ios
+ ionic cordova build ios
+ ionic cordova run ios
+```
+- for android
+```
+ ionic cordova platform add android
+ ionic cordova build android
+ ionic cordova run android
 ```
 
 Of couse, to build and run for real devices you need to install SDK, and use usb to connect handy with PC 
