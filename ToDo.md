@@ -1,9 +1,4 @@
-C:\Users\<username>\AppData\Local\Android\Sdk\platform-tools  adb devices
-adb device
 
-
-ANDROID_HOME=C:\Users\<username>\AppData\Local\Android\sdk
-JAVA_HOME=C:\Program Files\Java\jdk1.8.0_152
 
 Install Ionic
 
@@ -23,6 +18,20 @@ Then, to run it, cd into `myApp` and run on real devices as app
 $ ionic cordova platform add ios
 $ ionic cordova run ios
 ```
+
+Of couse, to build and run for real devices you need to install SDK, and use usb to connect handy with PC 
+- see below example for android
+
+```
+
+ANDROID_HOME=C:\Users\<username>\AppData\Local\Android\sdk
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_152
+
+C:\Users\<username>\AppData\Local\Android\Sdk\platform-tools  adb devices
+adb device
+
+```
+
 Run your App on PC as web 
 ```              
 cd myApp
@@ -90,3 +99,4 @@ debug on real devices with vscode
 ```
 https://wangyan100.github.io/2018/04/19/debug-ionic-on-real-device-with-vscode/
 ```
+
