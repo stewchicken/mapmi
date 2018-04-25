@@ -48,3 +48,39 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 ```
+Define and use Service 
+
+- e.g write ImageProvider whihc does upload image service
+- declare it at app.module.ts
+```
+providers: [
+    StatusBar,
+    SplashScreen,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ImageProvider,
+    Camera,
+    Sim, 
+    Geolocation,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+  ]
+```
+
+- use ImageProvider in any other component 
+
+```
+@Component({
+  selector: 'page-accidentdetails',
+  templateUrl: 'accidentdetails.html',
+})
+export class AccidentdetailsPage {
+  accident: Accident = {} as Accident;
+  accidentItemRef$: Observable<Accident>;
+  subscription: Subscription;
+  accidentkey: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private imageSrv: ImageProvider, private database: AngularFireDatabase,
+    private afAuth: AngularFireAuth) {
+    this.accidentkey = this.navParams.get('accidentkey');
+  }
+
+```
