@@ -24,6 +24,7 @@ ionic serve
 `
 
 Define rootpage
+
 `  
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
