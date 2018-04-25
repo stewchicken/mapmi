@@ -1,4 +1,3 @@
-#hospital-booking
 
 
 # Short Intro
@@ -15,9 +14,9 @@
  - show accident details
  
  
-# install
+# install 
 
-- install[ionic framework](http://ionicframework.com) and cordova, with below commands
+- install [ionic framework](http://ionicframework.com) and cordova, with below commands
 
 `
    npm install -g ionic cordova

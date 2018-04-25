@@ -48,15 +48,12 @@ export class LoginPage {
 
 
   async login(user: User) {
-
     console.log("user login with email " + user.email);
-
     this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password).
       then((session) => {
         let firebaseuser = session.currentUser;
         console.log(firebaseuser);
         console.log(this.afAuth.auth.currentUser);
-        // this.user = {} as User;
         this.navCtrl.push(MenuPage);
         console.log("login -> user is logged in ");
         localStorage.setItem('currentUser', JSON.stringify(user));
