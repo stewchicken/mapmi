@@ -84,3 +84,9 @@ export class AccidentdetailsPage {
   }
 
 ```
+
+debug on real devices with vscode
+
+```
+https://wangyan100.github.io/2018/04/19/debug-ionic-on-real-device-with-vscode/
+```
